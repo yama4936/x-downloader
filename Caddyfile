@@ -1,0 +1,9 @@
+x.yama.asia {
+    encode zstd gzip
+    request_body {
+        max_size 8KB
+    }
+    reverse_proxy app:8000 {
+        flush_interval -1
+    }
+}
